@@ -53,7 +53,7 @@ export default function Faq() {
                 <div className="px-6 pb-6 text-slate-600 text-sm leading-relaxed border-t border-sky-50 pt-4">
                   {item.answer}
                 </div>
-              </div>
+              </div> 
             </div>
           ))}
         </div>
