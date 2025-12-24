@@ -51,7 +51,12 @@ export default function About() {
             </p>
           </div>
           <div className="md:w-2/5 flex items-center justify-center relative">
-            <div className="bg-white rounded-[2.5rem] p-10 md:p-14 shadow-2xl text-slate-900 text-center max-w-xs transition-transform hover:scale-110 duration-300">
+            <div className="hidden md:flex flex-col gap-4 mr-8">
+              <div className="w-1.5 h-14 bg-white/30 rounded-full"></div>
+              <div className="w-1.5 h-14 bg-white/30 rounded-full"></div>
+              <div className="w-1.5 h-14 bg-white/30 rounded-full"></div>
+            </div>
+            <div className="bg-white rounded-[2.5rem] p-10 md:p-14 shadow-2xl text-slate-900 text-center max-w-xs transition-transform hover:scale-1 duration-300">
               <p className="font-bold text-xl ">
                 “Empowering little learners to build big futures with curiosity and kindness.”
               </p>
@@ -59,20 +64,21 @@ export default function About() {
           </div>
         </div>
       </div>
-      <div className="py-24 px-6 max-w-7xl mx-auto">
+      <div className="py-24 px-6 lg:px-[5%] w-full">
         <h2 className="text-center text-3xl md:text-4xl font-bold mb-20 text-slate-800">
-          Why Choose <span className="text-[#38BAE0]">Better</span>Montessori?
+          Why Choose <span className="text-brand-blue">Better</span>Montessori?
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-20 px-4">
+        <div className="flex flex-wrap justify-center gap-x-12 gap-y-20 max-w-[1300px] mx-auto">
           {reasons.map((item) => (
-            <div key={item.id} className="flex items-start gap-6 group">
-              <div className="bg-[#E0F7FD] text-[#38BAE0] text-2xl font-black w-16 h-14 flex items-center justify-center rounded-2xl flex-shrink-0 group-hover:bg-[#38BAE0] group-hover:text-white transition-colors duration-300">
+            <div key={item.id} 
+            className="flex items-start gap-6 group w-full sm:w-[320px] lg:w-[380px]">
+              <div className="bg-[#E0F7FD] text-brand-blue text-2xl font-black w-16 h-14 flex items-center justify-center rounded-2xl flex-shrink-0 group-hover:bg-[#38BAE0] group-hover:text-white transition-colors duration-300">
                 {item.id}
               </div>
               
-              <div>
-                <h3 className="text-[#38BAE0] font-bold text-xl mb-3">{item.title}</h3>
+              <div className="flex flex-col">
+                <h3 className="text-brand-blue font-bold text-xl mb-3">{item.title}</h3>
                 <p className="text-slate-500 text-sm leading-relaxed">
                   {item.description}
                 </p>
@@ -81,6 +87,7 @@ export default function About() {
           ))}
         </div>
       </div>
+
     </section>
   );
 }
