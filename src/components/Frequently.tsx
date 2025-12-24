@@ -1,5 +1,7 @@
 'use client';
 import React, { useState } from 'react';
+import {motion } from 'framer-motion';
+
 
 const faqData = [
   {
@@ -22,8 +24,20 @@ export default function Faq() {
 
   return (
     <section className="relative py-20 px-6 overflow-hidden bg-white">
-      <div className="absolute top-20 -left-20 w-64 h-64 border-[16px] border-sky-100 rounded-full opacity-50" />
-      <div className="absolute bottom-20 -right-20 w-64 h-64 border-[16px] border-sky-100 rounded-full opacity-50" />
+      <div className="absolute top-10 -left-20 pointer-events-none z-0">
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+          className="w-64 h-64 border-[12px] border-[#38BAE0] rounded-[40%] opacity-20"
+        />
+      </div>
+      <div className="absolute bottom-10 -right-20 pointer-events-none z-0">
+        <motion.div
+          animate={{ rotate: -360 }}
+          transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
+          className="w-80 h-80 border-[15px] border-[#38BAE0] rounded-[40%] opacity-20"
+        />
+      </div>
 
       <div className="max-w-3xl mx-auto relative z-10">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-900">
